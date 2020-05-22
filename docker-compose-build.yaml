@@ -3,8 +3,10 @@ services:
   udagram-api-user:
     build:
       context: ./udagram-api-user
+      dockerfile: Dockerfile
     image: clavance/udagram-api-user
   udagram-api-feed:
     build:
       context: ./udagram-api-feed
+      dockerfile: Dockerfile
     image: clavance/udagram-api-feed

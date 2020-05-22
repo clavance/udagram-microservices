@@ -2,6 +2,8 @@ version: "3"
 services:
   udagram-api-user:
     image: clavance/udagram-api-user
+    volumes:
+      - $HOME/.aws:/root/.aws
     environment:
       AWS_PGUSERNAME: $AWS_PGUSERNAME
       AWS_PGPASSWORD: $AWS_PGPASSWORD
