@@ -5,7 +5,7 @@ services:
 
 # https://docs.travis-ci.com/user/docker/#using-docker-compose
 env:
-  - DOCKER_COMPOSE_VERSION=1.4.2
+  - DOCKER_COMPOSE_VERSION=1.23.1
 
 before_install:
   - docker --version
@@ -14,7 +14,6 @@ before_install:
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  - docker logs
 
 install:
   - docker-compose -f docker-compose-build.yaml build --parallel
