@@ -20,3 +20,6 @@ install:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push clavance/udagram-api-feed
+  - docker push clavance/udagram-api-user
+  - docker push clavance/udagram-frontend
