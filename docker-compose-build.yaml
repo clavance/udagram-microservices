@@ -10,3 +10,8 @@ services:
       context: ./udagram-api-feed
       dockerfile: Dockerfile
     image: clavance/udagram-api-feed
+  udagram-frontend:
+    build:
+      context: ./udagram-frontend
+      dockerfile: Dockerfile
+    image: clavance/udagram-frontend
