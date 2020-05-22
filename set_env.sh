@@ -1,5 +1,7 @@
 # This file is used for convenience of local development.
 # DO NOT STORE YOUR CREDENTIALS INTO GIT
+
+# variables have been set in bash_profile
 export POSTGRES_USERNAME=
 export POSTGRES_PASSWORD=
 export POSTGRES_HOST=

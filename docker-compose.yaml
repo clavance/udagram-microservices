@@ -1,0 +1,28 @@
+version: "3"
+services:
+  udagram-api-user:
+    image: clavance/udagram-api-user
+    environment:
+      AWS_PGUSERNAME: $AWS_PGUSERNAME
+      AWS_PGPASSWORD: $AWS_PGPASSWORD
+      AWS_PGDATABASE: $AWS_PGDATABASE
+      AWS_PGHOST: $AWS_PGHOST
+      AWS_REGION: $AWS_REGION
+      AWS_PROFILE: $AWS_PROFILE
+      AWS_MEDIA_BUCKET: $AWS_MEDIA_BUCKET
+      JWT_SECRET: $JWT_SECRET
+      URL: "http://localhost:8100"
+  udagram-api-feed:
+    image: clavance/udagram-api-feed
+    volumes:
+      - $HOME/.aws:/root/.aws
+    environment:
+      AWS_PGUSERNAME: $AWS_PGUSERNAME
+      AWS_PGPASSWORD: $AWS_PGPASSWORD
+      AWS_PGDATABASE: $AWS_PGDATABASE
+      AWS_PGHOST: $AWS_PGHOST
+      AWS_REGION: $AWS_REGION
+      AWS_PROFILE: $AWS_PROFILE
+      AWS_MEDIA_BUCKET: $AWS_MEDIA_BUCKET
+      JWT_SECRET: $JWT_SECRET
+      URL: "http://localhost:8100"

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  udagram-api-user:
+    build:
+      context: ./udagram-api-user
+    image: clavance/udagram-api-user
+  udagram-api-feed:
+    build:
+      context: ./udagram-api-feed
+    image: clavance/udagram-api-feed
