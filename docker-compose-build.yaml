@@ -15,3 +15,8 @@ services:
       context: ./udagram-frontend
       dockerfile: Dockerfile
     image: clavance/udagram-frontend
+  reverseproxy:
+    build:
+      context: ./udagram-reverseproxy
+      dockerfile: Dockerfile
+    image: clavance/udagram-reverseproxy

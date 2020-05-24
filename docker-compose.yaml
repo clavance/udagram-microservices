@@ -13,7 +13,7 @@ services:
       AWS_PROFILE: $AWS_PROFILE
       AWS_MEDIA_BUCKET: $AWS_MEDIA_BUCKET
       JWT_SECRET: $JWT_SECRET
-      URL: "http://localhost:8100"
+      URL: "http://localhost:8081"
   udagram-api-feed:
     image: clavance/udagram-api-feed
     volumes:
@@ -27,4 +27,28 @@ services:
       AWS_PROFILE: $AWS_PROFILE
       AWS_MEDIA_BUCKET: $AWS_MEDIA_BUCKET
       JWT_SECRET: $JWT_SECRET
+      URL: "http://localhost:8081"
+  udagram-reverseproxy:
+    image: clavance/udagram-reverseproxy
+    ports:
+      - "8080:8080"
+    depends_on:
+      - udagram-api-user
+      - udagram-api-feed
+    restart: always
+    volumes:
+      - $HOME/.aws:/root/.aws
+    environment:
+      AWS_PGUSERNAME: $AWS_PGUSERNAME
+      AWS_PGPASSWORD: $AWS_PGPASSWORD
+      AWS_PGDATABASE: $AWS_PGDATABASE
+      AWS_PGHOST: $AWS_PGHOST
+      AWS_REGION: $AWS_REGION
+      AWS_PROFILE: $AWS_PROFILE
+      AWS_MEDIA_BUCKET: $AWS_MEDIA_BUCKET
+      JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
+  udagram-frontend:
+    image: clavance/udagram-frontend
+    ports:
+      - "8081:80"
