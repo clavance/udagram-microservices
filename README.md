@@ -42,7 +42,7 @@ The output of `kubectl describe services` does not expose any sensitive strings 
 ```bash
 kubectl describe services
 ```
-![](https://raw.githubusercontent.com/clavance/udagram-microservices/blob/master/screenshots/kubectl%20describe%20services.png)
+![](https://raw.githubusercontent.com/clavance/udagram-microservices/master/screenshots/kubectl%20describe%20services.png)
 
 Screenshot of Kubernetes services shows a reverse proxy.
 ![](https://raw.githubusercontent.com/clavance/udagram-microservices/master/screenshots/kubectl%20describe%20services%20(shows%20reverseproxy).png)
@@ -58,7 +58,7 @@ There are 2 udagram-frontend endpoints shown in `kubectl describe services udagr
 ```bash
 kubectl describe hpa
 ```
-![](https://raw.githubusercontent.com/clavance/udagram-microservices/blob/master/screenshots/kubectl%20get%20hpa.png)
+![](https://raw.githubusercontent.com/clavance/udagram-microservices/master/screenshots/kubectl%20get%20hpa.png)
 
 * To verify that you have set up logging with a backend application
 
@@ -73,7 +73,7 @@ kubectl logs {pod_name}
 
 
 
-### Instructions for Backend API
+## Instructions for Backend API
 * To download all the package dependencies, run the command from the directory `udagram-api/`:
     ```bash
     npm i
@@ -84,7 +84,7 @@ kubectl logs {pod_name}
     ```
 * You can visit `http://localhost:8080/api/v0/feed` in your web browser to verify that the application is running. You should see a JSON payload. Feel free to play around with Postman to test the API's.
 
-### Instructions for Frontend App
+## Instructions for Frontend App
 * To download all the package dependencies, run the command from the directory `udagram-frontend/`:
     ```bash
     npm i
