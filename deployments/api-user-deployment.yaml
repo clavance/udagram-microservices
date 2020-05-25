@@ -19,3 +19,29 @@ spec:
         image: clavance/udagram-api-user
         ports:
         - containerPort: 8080
+        env:
+        - name: AWS_PGUSERNAME
+          valueFrom:
+            secretKeyRef:
+              name: udagram-secret
+              key: AWS_PGUSERNAME
+        - name: AWS_PGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: udagram-secret
+              key: AWS_PGPASSWORD
+        - name: AWS_PGDATABASE
+          valueFrom:
+            secretKeyRef:
+              name: udagram-secret
+              key: AWS_PGDATABASE
+        - name: AWS_PGHOST
+          valueFrom:
+            secretKeyRef:
+              name: udagram-secret
+              key: AWS_PGHOST
+        - name: URL
+          valueFrom:
+            secretKeyRef:
+              name: udagram-secret
+              key: URL
